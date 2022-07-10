@@ -52,7 +52,7 @@ let meuNome = "leonardo";
 console.log(Number(meuNome)); // como a variável meuNome não contém apenas números ele retorna o erro NaN (Not a Number, não é número);
 console.log(+meuNome); // a conversão também retornará NaN
 
-let usuarioConectado = false;
-console.log(Number(usuarioConectado)); // teremos a conversão da booleana para número, sendo que false (falso) retorna o número 0.
-usuarioConectado = true;
-console.log(Number(usuarioConectado)); // agora teremos a conversão de true (verdadeiro) para o número 1.
+let usuarioConectado2 = false;
+console.log(Number(usuarioConectado2)); // teremos a conversão da booleana para número, sendo que false (falso) retorna o número 0.
+usuarioConectado2 = true;
+console.log(Number(usuarioConectado2)); // agora teremos a conversão de true (verdadeiro) para o número 1.
