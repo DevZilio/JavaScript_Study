@@ -72,3 +72,78 @@ function soma() {
 // Math.random() retorna 0.7456916270759015
 // Math.random() retorna 0.15449802102729304
 // Math.random() retorna 0.4214269561951203
+
+
+const num = 11;
+
+if (num > 10 && num < 20) {
+    console.log('número válido');
+} else {
+    console.log('numero nao valido');
+}
+
+function verificaNumero(numero) {
+
+    if (numero > 10) {
+        return 'número maior que 10';
+    } else {
+        return 'número não é maior que 10';
+    }
+}
+
+console.log(verificaNumero(9)) //número não é maior que 10
+
+
+
+function verificaNumero2(num) {
+
+    if (num >= 0 && num <= 10) {
+        console.log('número entre zero e dez');
+    } else if (num > 10 && num <= 20) {
+        console.log('número entre dez e vinte');
+    } else if (num > 20 && num <= 30) {
+        console.log('número entre vinte e trinta');
+    } else {
+        console.log('outro número');
+    }
+}
+//Veja que a cláusula else if também precisa receber a condição (ou as condições) como parâmetros, ao contrário do else, que deve fechar a cadeia de condicionais e continua sem receber nenhum parâmetro, pois é o código que será executado caso todas as outras condições anteriores falhem.
+
+
+
+
+
+
+
+
+// https://www.alura.com.br/artigos/high-order-functions
+
+
+const lukeLogin = () => {
+    let array = []
+    for (i = 0; i < 90000; i++) {
+        array.push(i)
+    }
+    return "Luke logado com sucesso!"
+}
+
+const leiaLogin = () => {
+    let array = []
+    for (i = 0; i < 90000; i++) {
+        array.push(i)
+    }
+    return "Leia logada com sucesso!"
+}
+
+console.log(lukeLogin());
+console.log(leiaLogin());
+
+const usuarioLogin = (pessoa) => {
+    let array = []
+    for (i = 0; i < 90000; i++) {
+        array.push(i)
+    }
+    return `${pessoa} logou com sucesso no sistema!`
+}
+
+console.log(usuarioLogin("Luke"));
