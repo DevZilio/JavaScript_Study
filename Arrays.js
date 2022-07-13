@@ -57,6 +57,21 @@ const salaUnificadas = salaDePython.concat(saldaDeJavaScript);
 // Retorna uma lista contando todos os elementos que passaram em um teste, ou seja, uma função escrita por nós.
 // Não altera o array onde foi chamado, então precisamos salvar esse resultado em um novo array.
 
+// DESAFIO - Filtrando por nota
+
+// Depois de calcular a media dos alunos, precisamos mostrar quem esta reprovado entre os alunos:
+// - 7, 4.5, 8, 7.5
+
+const nomes4 = ['Ana', 'Marcos', 'Maria', 'Mauro'];
+const notas4 = [7, 4.5, 8, 7.5];
+
+const reprovados = nomes4.filter((aluno, indice) => notas4[indice] < 5);
+
+console.log(reprovados);
+
+
+//-------------------------------------------------------------------------
+
 // find()
 // Funciona de forma parecida com o filter, porém retorna apenas o primeiro valor que satisfizer o teste, podendo ser uma string ou um número.
 
@@ -147,4 +162,92 @@ const mediasDosAlunos = [10, 8, 7.5, 9]
 //                          //0      1
 let listaDeNotasEAlunos = [alunos, mediasDosAlunos]
 
-console.log(`${listaDeNotasEAlunos[0][0]} sua media e ${listaDeNotasEAlunos[1][0]}`);
+// console.log(`${listaDeNotasEAlunos[0][0]} sua media e ${listaDeNotasEAlunos[1][0]}`);
+
+
+// ------------------------------------------------------------------------
+
+//  DESAFIO - Procurando na lista - ^ refencia acima ^
+
+// - Crie uma funcao que recebe como argumento o nome de um aluno.
+// - Verifique se o aluno esta presente na lista e retorne a media final que se encontra no mesmo indice
+// - Caso o nome do aluno nao esteja na lista, retorne uma mensagem indicando que o aluno nao foi encontrado
+
+const exibeNomeeNota = (nomeDOAluno) => {
+    if (listaDeNotasEAlunos[0].includes(nomeDOAluno)) { // includes (true, false), vai pesquisar dentro do array pra ver se a informacao que estamos procurando esta dentro do array
+        let indice = listaDeNotasEAlunos[0].indexOf(nomeDOAluno) // indexOf(number) para dar match com o nome do aluno dentro do array
+        return listaDeNotasEAlunos[0][indice] + ' sua media e ' + listaDeNotasEAlunos[1][indice]
+    } else {
+        return "Aluno nao esta cadastrado"
+    }
+}
+
+//console.log(exibeNomeeNota("Ana")); // Ana sua media e 9
+
+
+// -----------------------------------------------------------
+
+// DESAFIO - For
+
+// Imprima o indice e a lista com os seguintes numeros:
+// - 100, 200, 300, 400, 500, 600
+
+
+const numeros = [100, 200, 300, 400, 500, 600];
+
+for (let i = 0; i < numeros.length; i++) {
+    //console.log(i, numeros[i])
+}
+
+
+// DESAFIO - Media com For
+
+// Calcular a media entre as seguintes notas usando o For:
+// - 10, 6.5, 8 e 7,5
+
+const nots = [10, 6.5, 8, 7.5];
+
+let somaDasNotas = 0;
+
+// for (let i = 0; i < nots.length; i++) {
+//     somaDasNotas += nots[i];
+// }
+
+let med = somaDasNotas / nots.length
+
+//console.log(med);
+
+// DESAFIO - Media com ForEach
+
+nots.forEach(nota => {
+    somaDasNotas += nota
+})
+
+let med2 = somaDasNotas / nots.length;
+
+// console.log(med2);
+
+
+// map()
+
+// DESAFIO - Incluir nota extra
+
+// Um aluno recebeu um ponto extra nas suas notas, adicione esse ponto em suas notas:
+// - 10, 9, 8, 7, 6
+
+const notaAluno = [10, 9, 8, 7, 6]
+
+const notaAtulizada = notaAluno.map(nota => nota == 10 ? nota : ++nota)
+
+// console.log(notaAtulizada);
+
+// DESAFIO - Padronizando nomes
+
+// Precisamos padronizar a lista de alunos para conter apenas letras maiusculas:
+// - ['ana Julia', 'Caio vinicius', 'BIA silva']
+
+let nomes3 = ['ana Julia', 'caio vinicius', 'bIA silva']
+
+const nomesAtualizados = nomes3.map(nome => nome.toUpperCase());
+
+// console.log(nomesAtualizados);
