@@ -84,9 +84,6 @@ console.log(reprovados);
 // lastIndexOf()
 // Funciona da mesma forma que o indexOf(), porém retorna o índice referente à última ocorrência de um valor em um array, varrendo o array de trás para frente.
 
-// forEach()
-// Executa uma função em cada elemento do array de forma individual.
-// Não altera o array original e nem retorna um valor, deixando esse trabalho a cargo da função escolhida.
 
 // pop()
 // Retira o último elemento do array.
@@ -107,6 +104,29 @@ console.log(reprovados);
 // reduce()
 // Utiliza uma função definida pelo usuário em cada um dos elementos, guardando o resultado em uma variável que pode ser acessada dentro da função que foi definida, retornando um único valor no final, reduzindo o array para um único valor.
 
+// DESAFIO - medias das turmas
+// Com a media de todos os alunos de 3 salas, calcule a media geral de cada sala:
+// - const salaJS = [7, 8, 8, 7, 10, 6.5, 4, 10, 7]
+// - const salaJava = [6, 5, 8, 9, 5, 6]
+// - const salaPython = [7, 3.5, 8, 9.5]
+
+const salaJS = [7, 8, 8, 7, 10, 6.5, 4, 10, 7]
+const salaJava = [6, 5, 8, 9, 5, 6]
+const salaPython = [7, 3.5, 8, 9.5]
+
+function mediaSala(notasDaSala) {
+    const somadasNotas = notasDaSala.reduce((acum, atual) => atual + acum, 0)
+    return somadasNotas / notasDaSala.length
+}
+
+console.log(`Media da sala de JavaScript ${mediaSala(salaJS)}`)
+console.log(`Media da sala de Java ${mediaSala(salaJava)}`)
+console.log(`Media da sala de Python ${mediaSala(salaPython)}`)
+
+
+
+//-----------------------------------------------------------------
+
 // reduceRight()
 // Funciona igual o reduce() porém começa do final do array e segue até o início.
 
@@ -126,6 +146,20 @@ const sala2 = nomes.slice(nomes.length / 2);
 
 // sort()
 // Organiza o array de acordo com a classificação Unicode, onde os números vêm antes das letras, porém não funciona corretamente para números, onde temos que definir uma função que irá auxiliar o comando.
+
+
+// split()
+
+// O método split() é bem interessante, pois com ele conseguimos quebrar uma string com base em caracteres separadores que vamos informar para o método como parâmetro.
+
+// Vamos ver um exemplo:
+
+let linguagens = "JavaScript;Java;C#;PHP;Python;Go;Vb;SQL;C;C++";
+let arrayLinguagens = linguagens.split(";");
+
+//console.log(arrayLinguagens)
+
+
 
 // splice()
 // Consegue remover, um ou mais elementos consecutivos caso o segundo parâmetro tenha um valor maior que 0, e incluir um ou mais elementos a partir de um índice escolhido.
@@ -217,6 +251,11 @@ let med = somaDasNotas / nots.length
 
 //console.log(med);
 
+
+// forEach()
+// Executa uma função em cada elemento do array de forma individual.
+// Não altera o array original e nem retorna um valor, deixando esse trabalho a cargo da função escolhida.
+
 // DESAFIO - Media com ForEach
 
 nots.forEach(nota => {
@@ -251,3 +290,16 @@ let nomes3 = ['ana Julia', 'caio vinicius', 'bIA silva']
 const nomesAtualizados = nomes3.map(nome => nome.toUpperCase());
 
 // console.log(nomesAtualizados);
+
+
+
+// trim()
+
+// O trim() remove os espaços em branco no início ou fim de uma string. Se em alguma situação precisarmos fazer uma verificação de que o usuário não digitou o login com espaços, faremos;
+
+let login = "   andre@emailteste.com      ";
+let loginSemEspaco = login.trim();
+
+//console.log(loginSemEspaco); //andre@emailteste.com
+
+//No JavaScript ainda temos algumas variações desta função como: trimEnd(),trimStart(),trimLeft() e trimRight(), teste também estas variantes e veja o resultado obtido, ok
