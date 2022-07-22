@@ -59,3 +59,6 @@ const mediasDosAlunos = [6.8, 8, 7.5, 9, 6, 7]
 const reprovados = listaDeChamda.filter((_, indice) => mediasDosAlunos[indice] < 7.5);
 
 console.log(`Alunos reprovados ${reprovados}`);
+
+
+//---------------------------------------------
